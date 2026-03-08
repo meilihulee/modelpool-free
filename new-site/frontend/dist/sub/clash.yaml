@@ -1,0 +1,58 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: rule
+log-level: info
+unified-delay: true
+
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+
+proxies:
+  - name: "LEE-HY2-9443"
+    type: hysteria2
+    server: leehub.xyz
+    port: 9443
+    password: "zcNpBhD5DyhCZhaOToDrYHae"
+    sni: www.bing.com
+    skip-cert-verify: true
+    up: "100"
+    down: "300"
+
+  - name: "LEE-TROJAN-10443"
+    type: trojan
+    server: leehub.xyz
+    port: 10443
+    password: "N@noYJ_20260304"
+    sni: www.bing.com
+    skip-cert-verify: true
+    udp: true
+
+proxy-groups:
+  - name: "🚀 节点选择"
+    type: url-test
+    proxies:
+      - "LEE-HY2-9443"
+      - "LEE-TROJAN-10443"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 180
+
+  - name: "🌍 代理"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - "LEE-HY2-9443"
+      - "LEE-TROJAN-10443"
+      - DIRECT
+
+rules:
+  - GEOIP,CN,DIRECT
+  - MATCH,🌍 代理

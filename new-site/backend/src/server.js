@@ -25,6 +25,20 @@ app.get('/healthz', (req, res) => {
   res.json({ ok: true, ts: Date.now() })
 })
 
+// GET /api/sub/clash.yaml
+app.get('/api/sub/clash.yaml', async (req, res) => {
+  try {
+    const dataPath = join(__dirname, 'data', 'clash.yaml')
+    const raw = await readFile(dataPath, 'utf-8')
+    res.set('Content-Type', 'text/yaml; charset=utf-8')
+    res.set('Cache-Control', 'public, max-age=60, s-maxage=300, stale-while-revalidate=600')
+    res.send(raw)
+  } catch (err) {
+    console.error('读取订阅配置失败:', err)
+    res.status(500).json({ error: '无法读取订阅配置' })
+  }
+})
+
 // GET /api/resources
 app.get('/api/resources', async (req, res) => {
   try {
