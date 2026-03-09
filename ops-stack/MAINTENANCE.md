@@ -1,5 +1,11 @@
 # Website Ops Maintenance (n8n + Kuma + Metabase)
 
+## Access
+
+- n8n: `http://<server-ip>:5678`
+- Metabase: `http://<server-ip>:3002`
+- Uptime Kuma: `http://<server-ip>:13001` (3001 is occupied by another local service on this host)
+
 ## Current automation (already enabled)
 
 - Script: `scripts/ops_watchdog.sh`
@@ -20,7 +26,14 @@
 
 ## Kuma baseline monitors (manual in UI)
 
-Add 2 HTTP monitors in Kuma:
+Seed script (already used once):
+
+```bash
+python3 ops-stack/scripts/seed_kuma_monitors.py
+cd ops-stack && docker compose restart uptime-kuma
+```
+
+Expected monitors:
 
 1. Name: `leehub-home`
    - URL: `https://leehub.xyz/`
