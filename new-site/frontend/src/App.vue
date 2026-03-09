@@ -20,6 +20,10 @@
           placeholder="搜索名称、描述或标签..."
           class="flex-1 px-5 py-3 rounded-2xl bg-gray-800/60 border border-gray-600 backdrop-blur focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 outline-none transition"
         />
+        <label class="flex items-center gap-2 px-3 py-2 rounded-lg border border-emerald-500/40 bg-emerald-900/20 text-emerald-300 text-sm">
+          <input type="checkbox" v-model="onlyStableFree" class="accent-emerald-400" />
+          仅看免费稳定
+        </label>
       </div>
 
       <div class="flex flex-wrap gap-2">
@@ -84,6 +88,7 @@ import { ref, computed, onMounted, defineComponent } from 'vue'
 const resources = ref([])
 const search = ref('')
 const selectedCategory = ref('全部')
+const onlyStableFree = ref(true)
 
 onMounted(async () => {
   try {
@@ -111,7 +116,10 @@ const filtered = computed(() => {
       r.title?.toLowerCase().includes(q) ||
       r.description?.toLowerCase().includes(q) ||
       (r.tags && r.tags.some(t => t.toLowerCase().includes(q)))
-    return inCategory && matchSearch
+
+    const matchStableFree = !onlyStableFree.value || (r.stable === true && ['free', 'freemium', 'opensource'].includes(r.freeType))
+
+    return inCategory && matchSearch && matchStableFree
   })
 })
 
@@ -149,7 +157,11 @@ const ResourceCard = defineComponent({
         <h3 class="font-bold text-white text-lg leading-tight group-hover:text-cyan-300 transition">{{ item.title }}</h3>
         <span class="px-2 py-0.5 text-xs rounded border bg-gray-700/70 text-cyan-200 border-cyan-500/30">{{ item.category }}</span>
       </div>
-      <p class="text-gray-400 text-sm mb-4 line-clamp-2">{{ item.description }}</p>
+      <p class="text-gray-400 text-sm mb-3 line-clamp-2">{{ item.description }}</p>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span v-if="item.stable" class="px-2 py-1 text-xs rounded bg-emerald-900/40 text-emerald-300 border border-emerald-500/40">长期稳定</span>
+        <span v-if="item.freeType" class="px-2 py-1 text-xs rounded bg-indigo-900/40 text-indigo-200 border border-indigo-500/40">{{ item.freeType === 'free' ? '完全免费' : item.freeType === 'freemium' ? '免费额度' : '开源自建' }}</span>
+      </div>
       <div class="flex flex-wrap gap-2 mb-5">
         <span v-for="t in item.tags" :key="t" class="px-2 py-1 text-xs rounded bg-gray-700/60 text-cyan-200">{{ t }}</span>
       </div>
