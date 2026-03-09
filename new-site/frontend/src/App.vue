@@ -41,6 +41,33 @@
           {{ c }}
         </button>
       </div>
+
+      <section class="mt-6">
+        <h2 class="text-xl md:text-2xl font-bold text-cyan-300 mb-4">⚡ OpenClaw 一键安装包下载</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-gray-800/60 border border-cyan-700/40">
+            <h3 class="font-semibold mb-2">🪟 Windows</h3>
+            <div class="flex gap-2 text-sm">
+              <a href="/downloads/openclaw/windows/openclaw-windows-oneclick-kit.zip" class="px-3 py-2 rounded bg-cyan-600 text-white">安装包</a>
+              <a href="/downloads/openclaw/windows/openclaw-windows-oneclick.skill" class="px-3 py-2 rounded border border-cyan-400/40 text-cyan-300">技能包</a>
+            </div>
+          </div>
+          <div class="p-4 rounded-xl bg-gray-800/60 border border-purple-700/40">
+            <h3 class="font-semibold mb-2">🍎 macOS</h3>
+            <div class="flex gap-2 text-sm">
+              <a href="/downloads/openclaw/macos/openclaw-macos-oneclick-kit.zip" class="px-3 py-2 rounded bg-purple-600 text-white">安装包</a>
+              <a href="/downloads/openclaw/macos/openclaw-macos-oneclick.skill" class="px-3 py-2 rounded border border-purple-400/40 text-purple-300">技能包</a>
+            </div>
+          </div>
+          <div class="p-4 rounded-xl bg-gray-800/60 border border-emerald-700/40">
+            <h3 class="font-semibold mb-2">☁️ Linux 云服务器</h3>
+            <div class="flex gap-2 text-sm">
+              <a href="/downloads/openclaw/linux-server/openclaw-linux-server-oneclick-kit.zip" class="px-3 py-2 rounded bg-emerald-600 text-white">安装包</a>
+              <a href="/downloads/openclaw/linux-server/openclaw-linux-server-oneclick.skill" class="px-3 py-2 rounded border border-emerald-400/40 text-emerald-300">技能包</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </header>
 
     <main class="max-w-7xl mx-auto px-6 pb-16">
