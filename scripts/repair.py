@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-FreeSwitch Repair — One-click diagnostics and fix for OpenClaw model issues.
+ModelPool Repair — One-click diagnostics and fix for OpenClaw model issues.
 """
 
 import json
@@ -238,7 +238,7 @@ def step7_restart():
 
 def main():
     print("")
-    print("🔧 FreeSwitch Repair v1.0")
+    print("🔧 ModelPool Repair v1.0")
     print("=" * 40)
 
     out, _ = run("openclaw --version 2>&1")

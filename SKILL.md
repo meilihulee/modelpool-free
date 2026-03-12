@@ -1,32 +1,32 @@
 ---
-name: freeswitch
+name: modelpool
 description: Free AI model manager for OpenClaw. Auto-discovers free models from OpenRouter, configures multi-key rotation for doubled free quota, builds smart fallback chains, and includes one-click repair for model issues.
 license: MIT
 ---
 
-# FreeSwitch — Free AI Model Manager for OpenClaw
+# ModelPool — Free AI Model Manager for OpenClaw
 
 Automatically discover, configure, and maintain free AI models with multi-key rotation and smart fallback.
 
 ## Commands
 
-- `freeswitch setup` — Interactive setup: enter your OpenRouter keys, auto-discover best free models, configure rotation
-- `freeswitch auto` — Auto-discover and configure the best free models (non-interactive, uses existing keys)
-- `freeswitch list` — List all available free models from OpenRouter with quality scores
-- `freeswitch switch <model>` — Manually switch primary model
-- `freeswitch status` — Show current model config, key status, and fallback chain
-- `freeswitch repair` — Diagnose and fix model issues (dead API, stuck sessions, broken config)
-- `freeswitch keys add <key>` — Add a new OpenRouter key for rotation
-- `freeswitch keys list` — Show all configured keys and their status
-- `freeswitch refresh` — Force refresh model cache from OpenRouter API
+- `modelpool setup` — Interactive setup: enter your OpenRouter keys, auto-discover best free models, configure rotation
+- `modelpool auto` — Auto-discover and configure the best free models (non-interactive, uses existing keys)
+- `modelpool list` — List all available free models from OpenRouter with quality scores
+- `modelpool switch <model>` — Manually switch primary model
+- `modelpool status` — Show current model config, key status, and fallback chain
+- `modelpool repair` — Diagnose and fix model issues (dead API, stuck sessions, broken config)
+- `modelpool keys add <key>` — Add a new OpenRouter key for rotation
+- `modelpool keys list` — Show all configured keys and their status
+- `modelpool refresh` — Force refresh model cache from OpenRouter API
 
 ## Setup
 
 ```bash
 # First time: interactive setup
-freeswitch setup
+modelpool setup
 
-# That's it. FreeSwitch will:
+# That's it. ModelPool will:
 # 1. Ask for your OpenRouter key(s)
 # 2. Auto-discover all free models
 # 3. Score and rank them by quality
@@ -38,7 +38,7 @@ freeswitch setup
 ## How It Works
 
 ### Multi-Key Rotation
-Each OpenRouter key has independent rate limits. FreeSwitch distributes models across keys:
+Each OpenRouter key has independent rate limits. ModelPool distributes models across keys:
 - Key1: Model A, Model C, Model E
 - Key2: Model B, Model D, Model F
 
@@ -54,7 +54,7 @@ Models are ranked by quality score (based on context window, reasoning capabilit
 5. ... and so on
 
 ### Auto-Repair
-`freeswitch repair` runs 7-step diagnostics:
+`modelpool repair` runs 7-step diagnostics:
 1. Check Gateway process
 2. Validate config file
 3. Test each model API connectivity
@@ -75,7 +75,7 @@ For more keys: use different email addresses. Each account gets independent free
 ## File Structure
 
 ```
-freeswitch/
+modelpool/
 ├── SKILL.md          # This file
 ├── scripts/
 │   ├── freeswitch.py # Main CLI tool

@@ -1,4 +1,4 @@
-# 🔄 FreeSwitch
+# 🎱 ModelPool
 
 **The smart AI model manager for OpenClaw that never hits rate limits.**
 
@@ -6,24 +6,24 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![OpenRouter](https://img.shields.io/badge/OpenRouter-Compatible-green.svg)](https://openrouter.ai)
 
-FreeSwitch solves the #1 pain point of using free AI models: **rate limits**. By intelligently rotating multiple API keys and auto-switching between quality-ranked models, you get unlimited free AI coding without interruptions.
+ModelPool solves the #1 pain point of using free AI models: **rate limits**. By intelligently rotating multiple API keys and auto-switching between quality-ranked models, you get unlimited free AI coding without interruptions.
 
 ---
 
 ## ⚡ Quick Start
 
 ```bash
-pip install freeswitch-oc
-freeswitch setup
+pip install modelpool-oc
+modelpool setup
 ```
 
-That's it. Enter your OpenRouter keys (free at [openrouter.ai](https://openrouter.ai)), and FreeSwitch handles everything else automatically.
+That's it. Enter your OpenRouter keys (free at [openrouter.ai](https://openrouter.ai)), and ModelPool handles everything else automatically.
 
 ---
 
-## 🎯 Why FreeSwitch?
+## 🎯 Why ModelPool?
 
-| Problem | FreeSwitch Solution |
+| Problem | ModelPool Solution |
 |---------|---------------------|
 | 🚫 Hit rate limits constantly | Multi-key rotation: 2 keys = 2x quota, 3 keys = 3x quota |
 | 🤷 Don't know which free models are good | Auto-ranks models by context window, reasoning, ratings |
@@ -49,9 +49,9 @@ That's it. Enter your OpenRouter keys (free at [openrouter.ai](https://openroute
 
 ## ✨ Features
 
-### 🔑 Multi-Key Rotation *(Unique to FreeSwitch)*
+### 🔑 Multi-Key Rotation *(Unique to ModelPool)*
 
-Add multiple OpenRouter keys (free to register) and FreeSwitch distributes models across them. Each key has independent rate limits, so **2 keys = 2x free quota**.
+Add multiple OpenRouter keys (free to register) and ModelPool distributes models across them. Each key has independent rate limits, so **2 keys = 2x free quota**.
 
 ```
 Key 1: Step 3.5 Flash → Nemotron 120B → GPT-OSS 120B
@@ -60,7 +60,7 @@ Key 2: Step 3.5 Flash → Qwen3 Coder  → Hermes 405B
 
 ### 🔍 Auto-Discovery & Quality Ranking
 
-FreeSwitch fetches all free models from OpenRouter's API and scores them by:
+ModelPool fetches all free models from OpenRouter's API and scores them by:
 - Context window size (bigger = better)
 - Reasoning capability
 - Known quality benchmarks
@@ -69,7 +69,7 @@ You always get the **best free models available**, automatically.
 
 ### 🔗 Smart Fallback Chain
 
-When one model hits a rate limit, FreeSwitch instantly switches to the next model on a different key. The chain alternates between keys for maximum uptime:
+When one model hits a rate limit, ModelPool instantly switches to the next model on a different key. The chain alternates between keys for maximum uptime:
 
 ```
 Request → Key1/Model A → ✅ Success
@@ -79,7 +79,7 @@ Request → Key1/Model A → ❌ Rate Limited
 
 ### 🔧 One-Click Repair
 
-`freeswitch repair` runs 7 automated diagnostic and fix steps:
+`modelpool repair` runs 7 automated diagnostic and fix steps:
 
 1. Check Gateway process
 2. Test each model API connectivity
@@ -96,22 +96,22 @@ Request → Key1/Model A → ❌ Rate Limited
 ### Option A: pip install
 
 ```bash
-pip install freeswitch-oc
+pip install modelpool-oc
 ```
 
 ### Option B: Clone and install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/freeswitch.git
-cd freeswitch
+git clone https://github.com/YOUR_USERNAME/modelpool.git
+cd modelpool
 pip install -e .
 ```
 
 ### Option C: Just run the script
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/freeswitch.git
-python freeswitch/scripts/freeswitch.py setup
+git clone https://github.com/YOUR_USERNAME/modelpool.git
+python modelpool/scripts/modelpool.py setup
 ```
 
 ---
@@ -121,9 +121,9 @@ python freeswitch/scripts/freeswitch.py setup
 ### First-Time Setup
 
 ```bash
-$ freeswitch setup
+$ modelpool setup
 
-🦞 FreeSwitch Setup
+🦞 ModelPool Setup
 ========================================
 
   Enter your OpenRouter API Key(s)
@@ -159,9 +159,9 @@ $ freeswitch setup
 ### Check Status
 
 ```bash
-$ freeswitch status
+$ modelpool status
 
-  🦞 FreeSwitch Status
+  🦞 ModelPool Status
   ────────────────────────────────────────
   Keys:      2
   Providers: 2
@@ -182,7 +182,7 @@ $ freeswitch status
 ### Browse Free Models
 
 ```bash
-$ freeswitch list
+$ modelpool list
 
   📋 28 free models available:
 
@@ -199,9 +199,9 @@ $ freeswitch list
 ### Fix Issues
 
 ```bash
-$ freeswitch repair
+$ modelpool repair
 
-🔧 FreeSwitch Repair v1.0
+🔧 ModelPool Repair v1.0
 ========================================
 
 📋 [1/7] Diagnostics...
@@ -232,15 +232,15 @@ $ freeswitch repair
 
 | Command | Description |
 |---------|-------------|
-| `freeswitch setup` | **Interactive first-time setup** — the one command you need |
-| `freeswitch auto` | Auto-reconfigure using existing keys (non-interactive) |
-| `freeswitch list` | Show all available free models with quality scores |
-| `freeswitch switch <model>` | Manually switch primary model |
-| `freeswitch status` | Show current config, keys, and fallback chain |
-| `freeswitch repair` | One-click diagnose and fix all issues |
-| `freeswitch keys add <key>` | Add another OpenRouter key |
-| `freeswitch keys list` | Show all configured keys (masked) |
-| `freeswitch refresh` | Force refresh model cache from API |
+| `modelpool setup` | **Interactive first-time setup** — the one command you need |
+| `modelpool auto` | Auto-reconfigure using existing keys (non-interactive) |
+| `modelpool list` | Show all available free models with quality scores |
+| `modelpool switch <model>` | Manually switch primary model |
+| `modelpool status` | Show current config, keys, and fallback chain |
+| `modelpool repair` | One-click diagnose and fix all issues |
+| `modelpool keys add <key>` | Add another OpenRouter key |
+| `modelpool keys list` | Show all configured keys (masked) |
+| `modelpool refresh` | Force refresh model cache from API |
 
 ---
 
@@ -270,7 +270,7 @@ When a request fails (rate limit, timeout, error), OpenClaw's built-in fallback 
 
 ## 🆚 Comparison with FreeRide
 
-| Feature | FreeSwitch | FreeRide |
+| Feature | ModelPool | FreeRide |
 |---------|:----------:|:--------:|
 | Auto-discover free models | ✅ | ✅ |
 | Quality scoring & ranking | ✅ | ✅ |
@@ -327,4 +327,4 @@ MIT — use it however you want.
 
 ---
 
-**⭐ If FreeSwitch saves you money, give it a star!**
+**⭐ If ModelPool saves you money, give it a star!**

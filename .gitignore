@@ -22,6 +22,6 @@ venv/
 Thumbs.db
 
 # FreeSwitch runtime files (contain user keys)
-freeswitch_keys.json
-freeswitch_cache.json
+modelpool_keys.json
+modelpool_cache.json
 *.bak

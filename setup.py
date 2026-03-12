@@ -1,20 +1,20 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="freeswitch-oc",
+    name="modelpool-oc",
     version="1.0.0",
     description="Free AI Model Manager for OpenClaw — auto-discover, multi-key rotation, smart fallback, one-click repair",
     long_description=open("README.md", encoding="utf-8").read() if __import__("os").path.exists("README.md") else "",
     long_description_content_type="text/markdown",
     author="LeeHub",
-    url="https://github.com/leehub-xyz/freeswitch",
+    url="https://github.com/meilihulee/modelpool",
     license="MIT",
     packages=find_packages(where="scripts"),
     package_dir={"": "scripts"},
     py_modules=["freeswitch", "repair"],
     entry_points={
         "console_scripts": [
-            "freeswitch=freeswitch:main",
+            "modelpool=freeswitch:main",
         ],
     },
     python_requires=">=3.8",

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-FreeSwitch — Free AI Model Manager for OpenClaw
+ModelPool — Free AI Model Manager for OpenClaw
 Auto-discover, configure, and maintain free AI models with multi-key rotation.
 """
 
@@ -15,8 +15,8 @@ import argparse
 
 VERSION = "1.0.0"
 CONFIG_PATH = os.path.expanduser("~/.openclaw/openclaw.json")
-CACHE_PATH = os.path.expanduser("~/.openclaw/freeswitch_cache.json")
-KEYS_PATH = os.path.expanduser("~/.openclaw/freeswitch_keys.json")
+CACHE_PATH = os.path.expanduser("~/.openclaw/modelpool_cache.json")
+KEYS_PATH = os.path.expanduser("~/.openclaw/modelpool_keys.json")
 OPENROUTER_MODELS_URL = "https://openrouter.ai/api/v1/models"
 
 # Model quality scoring weights
@@ -242,7 +242,7 @@ def build_fallback_chain(keys, model_groups):
 def cmd_setup(args):
     """Interactive setup."""
     print("")
-    print("🦞 FreeSwitch Setup")
+    print("🦞 ModelPool Setup")
     print("=" * 40)
     print("")
 
@@ -457,7 +457,7 @@ def cmd_status(args):
     providers = config.get("models", {}).get("providers", {})
     or_providers = {k: v for k, v in providers.items() if "openrouter" in k.lower()}
 
-    print(f"\n  🦞 FreeSwitch Status")
+    print(f"\n  🦞 ModelPool Status")
     print(f"  {'─' * 40}")
     print(f"  Keys:      {len(keys)}")
     print(f"  Providers: {len(or_providers)}")
@@ -525,10 +525,10 @@ def cmd_refresh(args):
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="freeswitch",
-        description="FreeSwitch — Free AI Model Manager for OpenClaw"
+        prog="modelpool",
+        description="ModelPool — Free AI Model Manager for OpenClaw"
     )
-    parser.add_argument("--version", action="version", version=f"FreeSwitch {VERSION}")
+    parser.add_argument("--version", action="version", version=f"ModelPool {VERSION}")
     sub = parser.add_subparsers(dest="command")
 
     sub.add_parser("setup", help="Interactive setup")
