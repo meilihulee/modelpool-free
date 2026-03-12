@@ -1,12 +1,12 @@
-# 🎱 ModelPool
+# 🎱 ModelPool (Free)
 
-**The smart AI model manager for OpenClaw that never hits rate limits.**
+**The smart free AI model manager for OpenClaw that never hits rate limits.**
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![OpenRouter](https://img.shields.io/badge/OpenRouter-Compatible-green.svg)](https://openrouter.ai)
 
-ModelPool solves the #1 pain point of using free AI models: **rate limits**. By intelligently rotating multiple API keys and auto-switching between quality-ranked models, you get unlimited free AI coding without interruptions.
+ModelPool solves the #1 pain point of using free AI models: **rate limits**. By intelligently rotating multiple API keys and auto-switching between quality-ranked free models, you get unlimited free AI coding without interruptions.
 
 ---
 
