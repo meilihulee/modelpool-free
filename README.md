@@ -1,4 +1,4 @@
-# 🎱 ModelPool (Free)
+# 🎱 ModelPool-Free
 
 **The smart free AI model manager for OpenClaw that never hits rate limits.**
 
