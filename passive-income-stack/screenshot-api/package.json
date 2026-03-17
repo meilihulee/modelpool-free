@@ -1,0 +1,14 @@
+{
+  "name": "screenshot-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "playwright": "^1.52.0"
+  }
+}
