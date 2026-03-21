@@ -1,0 +1,11 @@
+{
+  "providers": [
+    {
+      "provider": "openrouter",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "model": "openai/gpt-4o-mini",
+      "notes": "Use OpenAI-compatible transport unless protocol=anthropic."
+    }
+  ]
+}

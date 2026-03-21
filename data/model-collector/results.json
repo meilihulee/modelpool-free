@@ -23,7 +23,7 @@
         "messages_preview": "{\"error\":{\"message\":\"No cookie auth credentials found\",\"code\":401}}"
       },
       "suggestion": "可按 OpenAI 兼容协议接入，优先用 /v1/chat/completions 测试。",
-      "timestamp": 1774100227
+      "timestamp": 1774100498
     },
     {
       "name": "anthropic",
@@ -38,16 +38,32 @@
         "chat_status": 401,
         "models_ok": false,
         "chat_ok": false,
-        "models_preview": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"x-api-key header is required\"},\"request_id\":\"req_011CZGKGWnWugjMpjwFCXKuh\"}",
+        "models_preview": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"x-api-key header is required\"},\"request_id\":\"req_011CZGKcXfu7zeKyunJR5Nhg\"}",
         "chat_preview": "{\"error\":{\"code\":\"authentication_error\",\"message\":\"Invalid Anthropic API Key\",\"type\":\"invalid_request_error\",\"param\":null}}"
       },
       "anthropic_probe": {
         "messages_status": 401,
         "messages_ok": false,
-        "messages_preview": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"x-api-key header is required\"},\"request_id\":\"req_011CZGKGXtzH98ZbNvUUkELJ\"}"
+        "messages_preview": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"x-api-key header is required\"},\"request_id\":\"req_011CZGKcYncwH1UX3KopZGUF\"}"
       },
       "suggestion": "检查 base_url 是否包含正确网关路径与版本；确认 key 权限含模型推理。",
-      "timestamp": 1774100227
+      "timestamp": 1774100499
+    }
+  ],
+  "matrix": [
+    {
+      "name": "openrouter",
+      "protocol": "openai-compatible",
+      "openclaw": "ok",
+      "opencode": "ok",
+      "claude_code": "ok"
+    },
+    {
+      "name": "anthropic",
+      "protocol": "unknown",
+      "openclaw": "check",
+      "opencode": "check",
+      "claude_code": "check"
     }
   ]
 }

@@ -1,5 +1,10 @@
 # Model Collector Adapter Results
 
+## Compatibility Matrix
+
+- openrouter: protocol=openai-compatible | openclaw=ok | opencode=ok | claude_code=ok
+- anthropic: protocol=unknown | openclaw=check | opencode=check | claude_code=check
+
 ## openrouter
 - protocol: **openai-compatible** | ok: **True**
 - base: `https://openrouter.ai/api`

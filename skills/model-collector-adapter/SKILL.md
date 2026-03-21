@@ -47,6 +47,7 @@ python3 /root/.openclaw/workspace/skills/model-collector-adapter/scripts/collect
 - `data/model-collector/results.md`：可读汇总
 - `data/model-collector/generated/openclaw.providers.json`：OpenClaw provider 配置片段
 - `data/model-collector/generated/opencode.providers.json`：OpenCode provider 配置片段
+- `data/model-collector/generated/claude-code.providers.json`：Claude Code provider 配置片段与映射建议
 
 ## 规则
 

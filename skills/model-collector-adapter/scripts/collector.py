@@ -78,20 +78,59 @@ def classify(openai_probe, anth_probe):
     return 'unknown'
 
 
+def tool_templates(result):
+    name = result['name']
+    env_key = result['env_key']
+    base = result['normalized_base']
+    model = result.get('preferred_model') or 'REPLACE_MODEL'
+
+    openclaw_snip = {
+        'id': name,
+        'baseUrl': base,
+        'apiKeyEnv': env_key,
+        'defaultModel': model,
+        'protocol': result['protocol']
+    }
+
+    opencode_snip = {
+        'provider': name,
+        'base_url': base,
+        'api_key_env': env_key,
+        'default_model': model,
+        'protocol': result['protocol']
+    }
+
+    claude_code_snip = {
+        'provider': name,
+        'endpoint': base,
+        'api_key_env': env_key,
+        'model': model,
+        'notes': 'Use OpenAI-compatible transport unless protocol=anthropic.'
+    }
+    return openclaw_snip, opencode_snip, claude_code_snip
+
+
 def build_configs(results):
     openclaw = {'providers': []}
     opencode = {'providers': []}
+    claude_code = {'providers': []}
+    matrix = []
+
     for r in results:
-        if r['protocol'] == 'unknown':
-            continue
-        entry = {
+        openclaw_snip, opencode_snip, claude_code_snip = tool_templates(r)
+        matrix.append({
             'name': r['name'],
-            'base_url': r['base_url'],
-            'api_key_env': r['env_key']
-        }
-        openclaw['providers'].append(entry)
-        opencode['providers'].append(entry)
-    return openclaw, opencode
+            'protocol': r['protocol'],
+            'openclaw': 'ok' if r['ok'] else 'check',
+            'opencode': 'ok' if r['ok'] else 'check',
+            'claude_code': 'ok' if r['ok'] else 'check'
+        })
+        if r['protocol'] != 'unknown':
+            openclaw['providers'].append(openclaw_snip)
+            opencode['providers'].append(opencode_snip)
+            claude_code['providers'].append(claude_code_snip)
+
+    return openclaw, opencode, claude_code, matrix
 
 
 def main():
@@ -136,17 +175,22 @@ def main():
             'timestamp': int(time.time())
         })
 
-    openclaw_cfg, opencode_cfg = build_configs(results)
+    openclaw_cfg, opencode_cfg, claude_code_cfg, matrix = build_configs(results)
 
     os.makedirs(OUT_DIR, exist_ok=True)
     with open(os.path.join(OUT_DIR, 'results.json'), 'w', encoding='utf-8') as f:
-        json.dump({'count': len(results), 'items': results}, f, ensure_ascii=False, indent=2)
+        json.dump({'count': len(results), 'items': results, 'matrix': matrix}, f, ensure_ascii=False, indent=2)
     with open(os.path.join(GEN_DIR, 'openclaw.providers.json'), 'w', encoding='utf-8') as f:
         json.dump(openclaw_cfg, f, ensure_ascii=False, indent=2)
     with open(os.path.join(GEN_DIR, 'opencode.providers.json'), 'w', encoding='utf-8') as f:
         json.dump(opencode_cfg, f, ensure_ascii=False, indent=2)
+    with open(os.path.join(GEN_DIR, 'claude-code.providers.json'), 'w', encoding='utf-8') as f:
+        json.dump(claude_code_cfg, f, ensure_ascii=False, indent=2)
 
-    md = ['# Model Collector Adapter Results', '']
+    md = ['# Model Collector Adapter Results', '', '## Compatibility Matrix', '']
+    for m in matrix:
+        md.append(f"- {m['name']}: protocol={m['protocol']} | openclaw={m['openclaw']} | opencode={m['opencode']} | claude_code={m['claude_code']}")
+    md.append('')
     for r in results:
         md.append(f"## {r['name']}")
         md.append(f"- protocol: **{r['protocol']}** | ok: **{r['ok']}**")
