@@ -1,0 +1,53 @@
+{
+  "count": 2,
+  "items": [
+    {
+      "name": "openrouter",
+      "base_url": "https://openrouter.ai/api",
+      "normalized_base": "https://openrouter.ai/api/v1",
+      "env_key": "OPENROUTER_API_KEY",
+      "preferred_model": "openai/gpt-4o-mini",
+      "protocol": "openai-compatible",
+      "ok": true,
+      "openai_probe": {
+        "models_status": 200,
+        "chat_status": 401,
+        "models_ok": true,
+        "chat_ok": false,
+        "models_preview": "{\"data\":[{\"id\":\"xiaomi/mimo-v2-omni\",\"canonical_slug\":\"xiaomi/mimo-v2-omni-20260318\",\"hugging_face_id\":\"\",\"name\":\"Xiaomi: MiMo-V2-Omni\",\"created\":1773863703,\"description\":\"MiMo-V2-Omni is a frontier omni-modal model that natively processes ",
+        "chat_preview": "{\"error\":{\"message\":\"No cookie auth credentials found\",\"code\":401}}"
+      },
+      "anthropic_probe": {
+        "messages_status": 401,
+        "messages_ok": false,
+        "messages_preview": "{\"error\":{\"message\":\"No cookie auth credentials found\",\"code\":401}}"
+      },
+      "suggestion": "可按 OpenAI 兼容协议接入，优先用 /v1/chat/completions 测试。",
+      "timestamp": 1774100227
+    },
+    {
+      "name": "anthropic",
+      "base_url": "https://api.anthropic.com",
+      "normalized_base": "https://api.anthropic.com/v1",
+      "env_key": "ANTHROPIC_API_KEY",
+      "preferred_model": "claude-3-5-sonnet-latest",
+      "protocol": "unknown",
+      "ok": false,
+      "openai_probe": {
+        "models_status": 401,
+        "chat_status": 401,
+        "models_ok": false,
+        "chat_ok": false,
+        "models_preview": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"x-api-key header is required\"},\"request_id\":\"req_011CZGKGWnWugjMpjwFCXKuh\"}",
+        "chat_preview": "{\"error\":{\"code\":\"authentication_error\",\"message\":\"Invalid Anthropic API Key\",\"type\":\"invalid_request_error\",\"param\":null}}"
+      },
+      "anthropic_probe": {
+        "messages_status": 401,
+        "messages_ok": false,
+        "messages_preview": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"x-api-key header is required\"},\"request_id\":\"req_011CZGKGXtzH98ZbNvUUkELJ\"}"
+      },
+      "suggestion": "检查 base_url 是否包含正确网关路径与版本；确认 key 权限含模型推理。",
+      "timestamp": 1774100227
+    }
+  ]
+}
