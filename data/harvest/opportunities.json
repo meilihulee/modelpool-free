@@ -1,0 +1,306 @@
+{
+  "generatedAt": "2026-03-21T09:12:37.660509+00:00",
+  "count": 20,
+  "items": [
+    {
+      "title": "GitAgent by Lyzr",
+      "type": "skill",
+      "priority": "P0",
+      "impact": 5,
+      "effort": 3,
+      "score": 7,
+      "why_now": "把重复决策与执行流程自动化，提升交付速度",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Microsoft rolls back some of its Copilot AI bloat on Windows",
+      "type": "app",
+      "priority": "P0",
+      "impact": 5,
+      "effort": 3,
+      "score": 7,
+      "why_now": "提升编码效率与代码质量一致性",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Replit Agent 4",
+      "type": "skill",
+      "priority": "P0",
+      "impact": 5,
+      "effort": 3,
+      "score": 7,
+      "why_now": "把重复决策与执行流程自动化，提升交付速度",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "WordPress.com now lets AI agents write and publish posts, and more",
+      "type": "skill",
+      "priority": "P0",
+      "impact": 5,
+      "effort": 3,
+      "score": 7,
+      "why_now": "把重复决策与执行流程自动化，提升交付速度",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Cursor's \"in-house model\" Composer 2 is Kimi K2.5 with RL on top",
+      "type": "app",
+      "priority": "P0",
+      "impact": 4,
+      "effort": 2,
+      "score": 6,
+      "why_now": "提升编码效率与代码质量一致性",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Composer 2 by Cursor",
+      "type": "app",
+      "priority": "P0",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "提升编码效率与代码质量一致性",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Google AI Studio 2.0",
+      "type": "app",
+      "priority": "P0",
+      "impact": 4,
+      "effort": 4,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Save up to 60% API costs without TOON",
+      "type": "app",
+      "priority": "P1",
+      "impact": 4,
+      "effort": 2,
+      "score": 6,
+      "why_now": "降低集成成本，缩短功能上线周期",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "A French Navy officer accidentally leaked the location of an aircraft carrier by",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "AI Skills Manager",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "AI startups are eating the venture industry and the returns, so far, are good",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Amazon acquires Rivr, maker of a stair-climbing delivery robot",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Ask ChatGPT to pick a number from 1-10000, it generally selects from 7200-7500",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "DIY AI-powered robot arm",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Doodles Ai",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Employees had to restrain a dancing humanoid robot after it went wild at a Calif",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Everest AI",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "GB1: The AI from the UK",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Google adds 24-hour wait and mandatory reboot to Android sideloading flow",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    },
+    {
+      "title": "Jeff Bezos reportedly wants $100 billion to buy and transform old manufacturing ",
+      "type": "app",
+      "priority": "P2",
+      "impact": 3,
+      "effort": 2,
+      "score": 4,
+      "why_now": "帮助开发者更快构建并迭代工具型产品",
+      "mvp_steps": [
+        "定义输入输出协议",
+        "实现最小可运行脚本",
+        "接入可视化状态页",
+        "进行一轮真实数据验证"
+      ]
+    }
+  ]
+}
